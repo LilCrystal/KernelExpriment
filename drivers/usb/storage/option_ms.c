@@ -15,6 +15,7 @@
 #include "transport.h"
 #include "option_ms.h"
 #include "debug.h"
+#include <linux/printk.h>
 
 #define ZCD_FORCE_MODEM			0x01
 #define ZCD_ALLOW_MS 			0x02

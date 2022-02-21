@@ -47,6 +47,7 @@
 
 #include <linux/blkdev.h>
 #include "../../scsi/sd.h"
+#include <linux/printk.h>
 
 
 /***********************************************************************

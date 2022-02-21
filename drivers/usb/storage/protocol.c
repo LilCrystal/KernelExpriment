@@ -37,6 +37,7 @@
 #include "debug.h"
 #include "scsiglue.h"
 #include "transport.h"
+#include <linux/printk.h>
 
 /***********************************************************************
  * Protocol routines

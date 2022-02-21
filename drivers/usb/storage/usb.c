@@ -55,6 +55,7 @@
 
 #include "sierra_ms.h"
 #include "option_ms.h"
+#include <linux/printk.h>
 
 #if IS_ENABLED(CONFIG_USB_UAS)
 #include "uas-detect.h"
@@ -1156,4 +1157,5 @@ static struct usb_driver usb_storage_driver = {
 	.soft_unbind =	1,
 };
 
+//新版的内核换了一种方式而不知显式的直接init
 module_usb_stor_driver(usb_storage_driver, usb_stor_host_template, DRV_NAME);

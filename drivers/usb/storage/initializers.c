@@ -26,6 +26,7 @@
 #include "initializers.h"
 #include "debug.h"
 #include "transport.h"
+#include <linux/printk.h>
 
 /*
  * This places the Shuttle/SCM USB<->SCSI bridge devices in multi-target

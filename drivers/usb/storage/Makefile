@@ -13,6 +13,7 @@ ccflags-y += -DDEFAULT_SYMBOL_NAMESPACE=USB_STORAGE
 obj-$(CONFIG_USB_UAS)		+= uas.o
 obj-$(CONFIG_USB_STORAGE)	+= usb-storage.o
 
+# 目前我们只关心usb-storage这部分的代码
 usb-storage-y := scsiglue.o protocol.o transport.o usb.o
 usb-storage-y += initializers.o sierra_ms.o option_ms.o
 usb-storage-y += usual-tables.o

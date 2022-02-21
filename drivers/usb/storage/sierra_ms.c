@@ -13,6 +13,7 @@
 #include "scsiglue.h"
 #include "sierra_ms.h"
 #include "debug.h"
+#include <linux/printk.h>
 
 #define SWIMS_USB_REQUEST_SetSwocMode	0x0B
 #define SWIMS_USB_REQUEST_GetSwocInfo	0x0A

@@ -45,6 +45,7 @@
 #include "debug.h"
 #include "transport.h"
 #include "protocol.h"
+#include <linux/printk.h>
 
 /*
  * Vendor IDs for companies that seem to include the READ CAPACITY bug

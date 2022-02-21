@@ -10,6 +10,7 @@
 #include <linux/module.h>
 #include <linux/usb.h>
 #include <linux/usb_usual.h>
+#include <linux/printk.h>
 
 
 /*

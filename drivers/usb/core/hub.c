@@ -34,6 +34,7 @@
 #include <linux/bitfield.h>
 #include <linux/uaccess.h>
 #include <asm/byteorder.h>
+#inlcude <linux/printk.h>
 
 #include "hub.h"
 #include "otg_productlist.h"
@@ -1859,6 +1860,7 @@ static int hub_probe(struct usb_interface *intf, const struct usb_device_id *id)
 	/* We found a hub */
 	dev_info(&intf->dev, "USB hub found\n");
 
+	printk("LilCrystal hub_probe has been executed");
 	hub = kzalloc(sizeof(*hub), GFP_KERNEL);
 	if (!hub)
 		return -ENOMEM;
@@ -5800,6 +5802,7 @@ static const struct usb_device_id hub_id_table[] = {
 
 MODULE_DEVICE_TABLE(usb, hub_id_table);
 
+//事实上这是主机控制器中的根集线器，所有USB设备都要连接在root hub上
 static struct usb_driver hub_driver = {
 	.name =		"hub",
 	.probe =	hub_probe,

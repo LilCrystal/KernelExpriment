@@ -26,6 +26,7 @@ config USB_STORAGE
 
 if USB_STORAGE
 
+# 调试信息
 config USB_STORAGE_DEBUG
 	bool "USB Mass Storage verbose debug"
 	help

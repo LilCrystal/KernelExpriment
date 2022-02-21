@@ -245,6 +245,7 @@ int usb_generic_driver_probe(struct usb_device *udev)
 		}
 	}
 	/* USB device state == configured ... usable */
+	printk("LilCrystal usb_generic_driver_probe has been executed")
 	usb_notify_add_device(udev);
 
 	return 0;

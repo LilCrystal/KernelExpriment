@@ -1042,6 +1042,7 @@ static void usb_debugfs_cleanup(void)
 /*
  * Init
  */
+//All begins here
 static int __init usb_init(void)
 {
 	int retval;
@@ -1051,27 +1052,34 @@ static int __init usb_init(void)
 	}
 	usb_init_pool_max();
 
+	//用于调试USB的虚拟文件系统初始化
 	usb_debugfs_init();
 
 	usb_acpi_register();
+	//注册USB总线
 	retval = bus_register(&usb_bus_type);
 	if (retval)
 		goto bus_register_failed;
+	//各个子系统往往是相互独立的，因此当总线出现变化之后，需要通知其他总线
 	retval = bus_register_notifier(&usb_bus_type, &usb_bus_nb);
 	if (retval)
 		goto bus_notifier_failed;
+	//注册字符设备，主设备号180
 	retval = usb_major_init();
 	if (retval)
 		goto major_init_failed;
+	//注册usbfs驱动
 	retval = usb_register(&usbfs_driver);
 	if (retval)
 		goto driver_register_failed;
 	retval = usb_devio_init();
 	if (retval)
 		goto usb_devio_init_failed;
+	//初始化根集线器，这里边完成了驱动的注册
 	retval = usb_hub_init();
 	if (retval)
 		goto hub_init_failed;
+	//USb通用设备驱动的注册
 	retval = usb_register_device_driver(&usb_generic_driver, THIS_MODULE);
 	if (!retval)
 		goto out;
